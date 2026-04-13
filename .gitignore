@@ -1,0 +1,91 @@
+# Przedziały ogólne / systemowe
+.DS_Store
+Thumbs.db
+ehthumbs.db
+[Tt]emp/
+[Tt]mp/
+
+# VS / Visual Studio / Rider
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Logi
+*.log
+logs/
+Log*/
+
+# Backup / inne
+*.bak
+*.orig
+*.swp
+*.swn
+*.swo
+*.tmp
+
+
+# ====== Projekt .NET: Chatly ======
+
+# Kompilacja
+[Bb]in/
+[Oo]bj/
+[Rr]elease/
+[Dd]ebug/
+[Pp]ublish/
+
+# ASP.NET Core
+Chatly/wwwroot/lib/
+Chatly/wwwroot/node_modules/
+
+# Narzędzia .NET
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Paket
+.paket/paket-files/
+paket-files/
+
+# StyleCop
+StyleCopReport.xml
+
+# Resharper / Rider
+_ReSharper*/
+*.ReSharper
+*.DotSettings.user
+
+
+# ====== Projekt Next.js: chatly_client ======
+
+# Node / dependencies
+chatly_client/node_modules/
+chatly_client/.pnp
+chatly_client/.pnp.*
+
+# Next.js build output
+chatly_client/.next/
+chatly_client/out/
+chatly_client/.turbo/
+chatly_client/.vercel/
+
+# Testy / pokrycie
+chatly_client/coverage/
+
+# Env / sekrety (ROOT i client)
+.env
+.env.*
+!.env.example
+chatly_client/.env
+chatly_client/.env.*
+!chatly_client/.env.example
+
+# Logi Node/Next
+chatly_client/npm-debug.log*
+chatly_client/yarn-debug.log*
+chatly_client/yarn-error.log*
+chatly_client/pnpm-debug.log*
+chatly_client/.eslintcache
+
