@@ -1,23 +1,18 @@
 "use client"
 
-import { useEffect } from "react";
-import { ChatList } from "@/components/layout/chat/ChatList";
-import { ChatWindow } from "@/components/layout/chat/ChatWindow";
-import { useUserStore } from "@/context/store/user";
-import { ChatTopics } from "@/components/layout/chat/ChatTopics";
+import { ChatList } from "@/components/layout/chat/ChatList/ChatList";
+import { ChatWindow } from "@/components/layout/chat/ChatWindow/ChatWindow";
+import { ChatExtensions } from "@/components/layout/chat/ChatExtensions/ChatExtensions";
+import { ProtectedRoute } from "@/components/shared/ProtectedRoute";
 
 export default function Home() {
-  const { setUser } = useUserStore();
-
-  useEffect(() => {
-    setUser(1, "JohnDoe");
-  }, [setUser]);
-
   return (
-    <div className="flex flex-col flex-1 flex-row items-center justify-center  font-sans  p-6 gap-6">
-      
-      <ChatWindow />
-      <ChatList />
-    </div>
+    <ProtectedRoute>
+      <div className="flex flex-1 flex-row items-center justify-center font-sans p-6 gap-6">
+        <ChatExtensions />
+        <ChatWindow />
+        <ChatList />
+      </div>
+    </ProtectedRoute>
   );
 }
