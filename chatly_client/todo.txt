@@ -1,0 +1,39 @@
+[ ] - stworzyć modal (na zasadzie UserSearchModal.tsx) z prostym formularzem 
+(korzystaj z zod zarowno do stanu i walidacji) do dodawania nowego tematu czatu, 
+i wstawić go zamiast plusa w panelu Chat Topics (plus dalej zostaje jako trigger tylko ze juz wewnatrz modalu) 
+
+[ ] - zrobić header dla okna czatu zeby wyswietlał nazwę czatu (jeśli istnieje) jeśli nie to awatar i nazwe uzytkownika tak jak na liscie
+
+[ ] - zrobić obsługę przypinania wiadomosci i odpowiednie api na froncie i backu do filtrowania pobierania wiadomosci z isPinned i na podstawie ChaId
+wyświetlenie ich na froncie w sekcji
+
+[ ] - zrobic kontroller i serwis do dodawania reakcji i odpowiednia obsluge tego na froncie
+
+[ ] - zrobic ustawianie awatara czyli w pages/auth/register dodac formularz do dodawania obrazka 
+
+[ ] - upiekszyć ChatWindow
+
+[ ] - stworzyc obsluge Grup, dodawanie, usuwanie, dodawanie uzytkownikow do nich, zmiane nazwy itp, tak jak tworzy sie Chat tylko wysyłasz w api listę
+z większą ilością id użytkowników, i pobieranie grup z backendu na zasadzie ze jesli jest wiecej Participant
+to jest to grupa
+
+[ ] - dodać możliwość dodawania obrazków jako wiadomość w czacie
+
+[ ] - obrazki z czatu niech sie wyswietlaja w media
+
+[ ] - zastanowic sie nad komponentem do ustawień czatu zeby mozna bylo zmieniac nazwe itp (np dropdown z ikony ustawien z lista opcji), klikasz w opcje zmien nazwe
+i wyswietla sie modal do zmiany nazwy
+
+[ ] - zastanowic sie nad ta ikonka ustawien obok Chats na liscie chatów czy jest potrzebna, a jak jest to jakie tam ustawienia dodac
+
+[ ] - modal do dodawania nowego chatu upiększyć
+
+[ ] - na liscie chatow sa ikonki do filtrowania, i powinny wyswietlac dropdown ktory ma opcje filtrowania wedlug nazwy, 
+ukrycia nieaktywnych itp
+
+[ ] - trzeba zrobic obslugę czy uzytkownik jest aktywny itp, to najlepiej jakos polaczyc z websocket, bo wtedy aktywni sa connected a reszta nie
+
+[ ] - refaktoryzaja oczywiscie, jakies ekstrakcje funkcji do innych plikow itd np w ChatProvider to co sie da oczywiscie
+
+[ ] - cos przyjdzie do glowy to sie dopisze
+
