@@ -26,90 +26,125 @@ namespace Chatly.Controllers
             _chatService = chatService;
         }
 
+        [HttpGet]
+        [Authorize]
+        public async Task<IActionResult> GetChats()
+        {
+            var chats = await _chatService.GetChats(GetUserId());
+            return Ok(chats);
+        }
+
+        [HttpGet("{id}")]
+        [Authorize]
+        public async Task<IActionResult> GetChat(int id)
+        {
+            var chat = await _chatService.GetChat(id);
+
+            if (chat == null)
+                return NotFound("Chat not found");
+
+            return Ok(chat);
+        }
+
+        [HttpDelete("{chatId}/leave")]
+        [Authorize]
+        public async Task<IActionResult> LeaveChat(int chatId)
+        {
+            bool result = await _chatService.LeaveChat(GetUserId(), chatId);
+
+            if (result)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpPost("{chatId}/join")]
+        [Authorize]
+        public async Task<IActionResult> JoinChat([FromQuery] int chatId)
+        {
+            var result = await _chatService.AddParticipant(GetUserId(), chatId, "Member");
+
+            if (!result)
+            {
+                return BadRequest();
+            }
+            return NoContent();
+        }
+
         [HttpPost]
         [Authorize]
-        public async Task<IActionResult> CreateChat([FromBody] List<string> participants)
+        public async Task<IActionResult> CreateChat(CreateChatDTO dto)
         {
-            try
+            var chatId = await _chatService.CreateChat(GetUserId(), dto);
+            return Ok(chatId);
+        }
+
+        [HttpPut("{id}")]
+        [Authorize]
+        public async Task<IActionResult> UpdateChat(int id, UpdateChatDTO dto)
+        {
+            bool updated = await _chatService.UpdateChat(id, dto);
+
+            if (updated)
             {
-                string userId = GetUserId();
-                int participantsCount = participants.Count;
-                bool isCreated = participantsCount == 1 ? await _chatService.IsChatCreated(participants[0], userId) : false;
-
-                if (isCreated)
-                {
-                    return Ok(new { message = "Chat already exists" });
-                }
-                int chatId = await _chatService.CreateChat(participantsCount);
-
-                await _chatService.AddParticipant(userId, chatId);
-                foreach (var participant in participants)
-                {
-                    await _chatService.AddParticipant(participant, chatId);
-                }
-                await _chatService.AddTopic(userId, chatId);
-                return Ok(chatId);
+                return Ok();
             }
-            catch (Exception ex)
+            else
             {
-                return BadRequest(ex.ToString());
+                return BadRequest();
             }
 
         }
 
-        [HttpGet("list")]
+        [HttpDelete("{id}")]
         [Authorize]
-        public async Task<IActionResult> GetList()
+        public async Task<IActionResult> DeleteChat(int id)
         {
-            try
-            {
-                var chats = await _chatService.GetChats(GetUserId());
+            await _chatService.DeleteChat(id);
+            return NoContent();
+        }
 
-                return Ok(chats);
-            }
-            catch (Exception ex)
+        [HttpGet("{id}/members")]
+        [Authorize]
+        public async Task<IActionResult> GetMembers(int id)
+        {
+            var members = await _chatService.GetMembers(id);
+            return Ok(members);
+        }
+        [HttpGet("group")]
+        public async Task<IActionResult> FindChats([FromQuery] string name)
+        {
+            var chats = await _chatService.GetGroupChats(name, GetUserId());
+            if (chats == null)
+                return NoContent();
+            return Ok(chats);
+        }
+
+        [HttpDelete("{chatId}/participants/{participantId}")]
+        [Authorize]
+        public async Task<IActionResult> RemoveParticipant(int chatId, string participantId)
+        {
+            var result = await _chatService.LeaveChat(participantId, chatId);
+            if (result)
             {
-                return BadRequest(ex.ToString());
+                return Ok();
+            }
+            else
+            {
+                return BadRequest();
             }
         }
 
-        [HttpGet("topics")]
+        [HttpPut("{chatId}/participants/{participantId}/promote")]
         [Authorize]
-        public async Task<IActionResult> GetChatTopics([FromQuery] string chatId)
+        public async Task<IActionResult> PromoteParticipant(int chatId, string participantId)
         {
-            try
-            {
-                string userId = GetUserId();
-                List<TopicDTO> chatTopics = await _chatService.GetChatTopics(int.Parse(chatId));
-
-                if (chatTopics == null)
-                {
-                    await _chatService.AddTopic(userId, int.Parse(chatId));
-                    chatTopics = await _chatService.GetChatTopics(int.Parse(chatId));
-                }
-
-                return Ok(chatTopics);
-                
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.ToString());
-            }
-
-        }
-        [HttpGet("messages")]
-        [Authorize]
-        public async Task<IActionResult> GetTopicMessages([FromQuery] string topicId)
-        {
-            try
-            {
-                var messages = await _chatService.GetTopicMessages(int.Parse(topicId));
-                return Ok(messages);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.ToString());
-            }
+            await _chatService.PromoteParticipant(chatId, participantId);
+            return Ok();
         }
     }
 }

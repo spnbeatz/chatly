@@ -10,6 +10,10 @@ export function formatChatDate(dateString: string): string {
     const diffMonths = Math.floor(diffDays / 30);
     const diffYears = Math.floor(diffDays / 365);
 
+    if (diffMinutes < 1) {
+        return "Now";
+    }
+
     if (diffMinutes < 60) {
         return `${diffMinutes} min ago`;
     }

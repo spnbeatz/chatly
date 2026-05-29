@@ -1,16 +1,16 @@
 "use client";
 
 import { useEffect } from "react";
-import { useUserStore } from "@/context/store/user";
 import { useRouter } from "next/navigation";
+import { useCurrentUser } from "@/api/queries/users/users.query";
 
 export const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
-    const { user } = useUserStore();
+    const { data: user } = useCurrentUser();
     const router = useRouter();
 
     useEffect(() => {
         if (user === null) {
-            router.push("/auth/register");
+            router.push("/auth/login");
         }
     }, [user]); // eslint-disable-line react-hooks/exhaustive-deps
 

@@ -5,3 +5,8 @@ export type Message = {
     content: string;
     timestamp: string;
 }
+
+export type UpdateMessageDTO = {
+    content: string;
+    isPinned?: boolean;
+}

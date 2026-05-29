@@ -9,6 +9,8 @@ using Microsoft.Extensions.FileProviders;
 using Chatly.Interfaces;
 using Chatly.Services;
 using Chatly.Hubs;
+using Chatly.Roles;
+using Chatly.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,10 +20,18 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
+
+
 builder.Services.AddIdentity<User, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddSignInManager();
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(
+            new System.Text.Json.Serialization.JsonStringEnumConverter()
+        );
+    });
 
 var jwtKey = builder.Configuration["Jwt:Key"];
 
@@ -56,9 +66,20 @@ builder.Services.AddAuthorization();
 builder.Services.AddScoped<IFileStorageService, FileStorageService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IChatService, ChatService>();
+builder.Services.AddScoped<IMessageService, MessageService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<INotificationService, NotificationService>();
+builder.Services.AddScoped<IRequestService, RequestService>();
 
 
 var app = builder.Build();
+
+app.UseMiddleware<ExceptionMiddleware>();
+
+using (var scope = app.Services.CreateScope())
+{
+    await RoleSeeder.SeedRolesAsync(scope.ServiceProvider);
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -89,6 +110,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapHub<ChatHub>("/chatHub");
+app.MapHub<NotifyHub>("/notifyHub");
 app.MapControllers();
 
 app.Run();

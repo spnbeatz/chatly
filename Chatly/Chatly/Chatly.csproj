@@ -20,6 +20,7 @@
   <ItemGroup>
     <Folder Include="files\avatars\" />
     <Folder Include="files\chat\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

@@ -1,11 +1,8 @@
-﻿using Chatly.Services;
+﻿
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.AspNetCore.Authorization;
-using Chatly.Models;
-using System.Security.Claims;
-using System.Diagnostics;
-using Microsoft.AspNetCore.Authorization;
 using Chatly.Interfaces;
+using Chatly.Controllers.DTOs;
 
 namespace Chatly.Hubs
 {
@@ -13,13 +10,14 @@ namespace Chatly.Hubs
     public class ChatHub: Hub
     {
         private readonly IChatService _chatService;
+        private readonly IMessageService _messageService;
 
-        public ChatHub(IChatService chatService)
+        public ChatHub(IChatService chatService, IMessageService messageService)
         {
             _chatService = chatService;
+            _messageService = messageService;
         }
 
-        // 🔹 Po połączeniu dodaj usera do wszystkich jego chatów
         public override async Task OnConnectedAsync()
         {
             var userId = Context.UserIdentifier;
@@ -35,31 +33,16 @@ namespace Chatly.Hubs
             await base.OnConnectedAsync();
         }
 
-        // 🔹 Wysyłanie wiadomości
-        public async Task SendMessage(int topicId, string content)
+        public async Task SendMessage(int chatId, string content)
         {
             var userId = Context.UserIdentifier;
 
-            // 1. znajdź chatId
-            var chatId = await _chatService.GetChatIdFromTopic(topicId);
-
-            // 2. walidacja
             if (!await _chatService.IsUserInChat(userId, chatId))
                 throw new Exception("Brak dostępu do chatu");
 
-            // 3. zapis
-            var message = await _chatService.SaveMessage(topicId, userId, content);
+            var message = await _messageService.SaveMessage(chatId, userId, content);
 
-            // 4. broadcast
-            await Clients.Group(chatId.ToString()).SendAsync("ReceiveMessage", new
-            {
-                message.Id,
-                message.TopicId,
-                message.CreatedById,
-                message.Content,
-                message.CreatedAt,
-                chatId
-            });
+            await Clients.Group(chatId.ToString()).SendAsync("ReceiveMessage", new ShowMessageDTO(message));
         }
     }
 }

@@ -13,9 +13,7 @@ import {
 } from "@heroui/react";
 import { InputLabel } from "@/components/shared/InputLabel";
 import { useRouter } from "next/navigation";
-import { userService } from "@/api/services/user";
-import { useUserStore } from "@/context/store/user";
-import { useEffect } from "react";
+import { useRegisterUser } from "@/api/queries/users/users.mutation";
 
 export default function RegisterPage() {
     const {
@@ -26,16 +24,12 @@ export default function RegisterPage() {
         resolver: zodResolver(registerSchema),
     });
 
-    const { user } = useUserStore();
-
-    useEffect(() => { console.log("user loaded", user)}, [user]);
-
     const router = useRouter();
+    const { mutateAsync: registerUser } = useRegisterUser();
 
     const onSubmit = async (data: RegisterFormData) => {
         try {
-            const response = await userService.registerUser(data);
-            console.log(response, "register response");
+            await registerUser(data);
             router.push("/auth/login");
         } catch (error) {
             console.error("Registration failed:", error);

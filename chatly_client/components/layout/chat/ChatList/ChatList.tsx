@@ -1,19 +1,27 @@
 "use client";
 
-import { ListBox, Header, Card,  SearchField } from "@heroui/react";
+import { ListBox, Header, Card, SearchField, Button } from "@heroui/react";
 import { IoSettings } from "react-icons/io5";
 import { FaUserFriends } from "react-icons/fa";
 import { HiMiniUserGroup } from "react-icons/hi2";
-import { useChat } from "@/context/providers/ChatProvider";
 import { InfoCenteredText } from "@/components/shared/InfoCenteredText";
 import { ChatItem } from "./ChatItem";
 import { ChatIconButton } from "./ChatIconButton";
-import { ChatListFilterButton } from "./ChatListFilterButton";
-import { UserSearchModal } from "@/components/shared/UserSearchModal";
+import { UserSearchModal } from "@/components/shared/modals/UserSearchModal";
+import { GroupAddDropdown } from "@/components/shared/GroupAddDropdown";
+import { useState } from "react";
+import { MdPersonAdd } from "react-icons/md";
+import { useChats } from "@/api/queries/chats/chats.query";
+import { ChatState } from "@/types/chat";
+import { useSearchUserModalStore } from "@/context/store/modal";
 
 export const ChatList = () => {
 
-    const { chats } = useChat();
+    const { data: chats = {} } = useChats();
+
+    const { openModal } = useSearchUserModalStore();
+
+    const typedChats = Object.values(chats) as ChatState[];
 
     return (
         <Card className="w-[350px] shrink-0 h-full rounded-md shadow-medium bg-white dark:bg-black/80">
@@ -45,12 +53,21 @@ export const ChatList = () => {
                                 <FaUserFriends className="inline-block mr-2 text-[14px]" />
                                 <span>Friends</span>
                             </div>
+                            <div  className={"w-auto h-auto p-1 cursor-pointer"} onClick={openModal}><MdPersonAdd className="text-black/60" size={16}/></div>
 
-                            <ChatListFilterButton/>
                         </Header>
-                        {Object.entries(chats).map(([chatId, chat]) => (
-                            <ChatItem key={chatId} id={chatId} chat={chat} />
-                        ))}
+                        {typedChats.map((chat) => {
+                            if (chat.type !== "Direct") return null;
+                            return <ChatItem key={chat.chatId} chat={chat} />;
+                        })}
+                        {typedChats.filter((chat) => chat.type === "Direct").length === 0 ? (
+                            <ListBox.Item
+                                isDisabled
+                                className="cursor-default hover:bg-transparent focus:bg-transparent data-[hover=true]:bg-transparent"
+                            >
+                                <InfoCenteredText text="No friends found!" />
+                            </ListBox.Item>
+                        ) : null}
                     </ListBox.Section>
                     <ListBox.Section>
                         <Header className="w-full flex flex-row items-center justify-between">
@@ -58,24 +75,24 @@ export const ChatList = () => {
                                 <HiMiniUserGroup className="inline-block mr-2 text-[14px]" />
                                 <span>Groups</span>
                             </div>
-                            <ChatListFilterButton />
+                            <GroupAddDropdown />
                         </Header>
-{/*                         {[groups].map(group => (
-                            <ChatItem key={group.id} id={group.id.toString()} chat={undefined} />
-                        ))} */}
-                        <ListBox.Item
-                            isDisabled
-                            className="cursor-default hover:bg-transparent focus:bg-transparent data-[hover=true]:bg-transparent"
-                        >
-                            <InfoCenteredText text="Group chats coming soon!" />
-                        </ListBox.Item>
+                        {typedChats.map((chat) => {
+                            if (chat.type !== "Group") return null;
+                            return <ChatItem key={chat.chatId} chat={chat} />;
+                        })}
+                        {typedChats.filter((chat) => chat.type === "Group").length === 0 ? (
+                            <ListBox.Item
+                                isDisabled
+                                className="cursor-default hover:bg-transparent focus:bg-transparent data-[hover=true]:bg-transparent"
+                            >
+                                <InfoCenteredText text="Group chats coming soon!" />
+                            </ListBox.Item>
+                        ) : null}
                     </ListBox.Section>
                 </ListBox>
+                
             </Card.Content>
-
-            <Card.Footer>
-                <UserSearchModal />
-            </Card.Footer>
         </Card>
 
     )

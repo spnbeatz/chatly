@@ -25,3 +25,13 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer components {
+  .toast__title {
+    color: rgba(0, 0, 0, 0.61)
+  }
+
+  .toast {
+    margin-top: 80px;
+  }
+}

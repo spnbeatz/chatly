@@ -5,16 +5,18 @@ namespace Chatly.Interfaces
 {
     public interface IChatService
     {
-        Task<int> CreateChat(int participantsCount);
+        Task<ShowChatDTO> GetChat(int id);
+        Task<int> CreateChat(string creatorId, CreateChatDTO dto);
+        Task<bool> UpdateChat(int id, UpdateChatDTO dto);
+        Task DeleteChat(int id);
+        Task<bool> LeaveChat(string userId, int chatId);
         Task<bool> IsChatCreated(string participant, string userId);
-        Task<bool> AddParticipant(string participantId, int chatId);
-        Task<bool> AddTopic(string userId, int chatId);
+        Task<bool> AddParticipant(string participantId, int chatId, string role);
         Task<bool> IsUserInChat(string userId, int chatId);
-        Task<Message> SaveMessage(int topicId, string userId, string content);
-        Task<int> GetChatIdFromTopic(int topicId);
         Task<List<int>> GetUserChats(string userId);
-        Task<List<ChatListDto>> GetChats(string userId);
-        Task<List<TopicDTO>> GetChatTopics(int chatId);
-        Task<List<Message>> GetTopicMessages(int topicId);
+        Task<List<ChatItemDto>> GetChats(string userId);
+        Task<List<MemberDTO>> GetMembers(int chatId);
+        Task<List<ChatMiniDTO>> GetGroupChats(string name, string userId);
+        Task PromoteParticipant(int chatId, string participantId);
     }
 }

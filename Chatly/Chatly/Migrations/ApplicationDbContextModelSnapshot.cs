@@ -30,6 +30,9 @@ namespace Chatly.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("ChatPrivacy")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -40,44 +43,12 @@ namespace Chatly.Migrations
                     b.Property<int>("Type")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
                     b.HasKey("Id");
 
                     b.ToTable("Chat");
-                });
-
-            modelBuilder.Entity("Chatly.Models.Media", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("ContentType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FileName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("MessageId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Url")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MessageId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Media");
                 });
 
             modelBuilder.Entity("Chatly.Models.Message", b =>
@@ -87,6 +58,9 @@ namespace Chatly.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ChatId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Content")
                         .IsRequired()
@@ -99,16 +73,61 @@ namespace Chatly.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("TopicId")
+                    b.Property<bool>("IsPinned")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Status")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ChatId");
+
                     b.HasIndex("CreatedById");
 
-                    b.HasIndex("TopicId");
-
                     b.ToTable("Message");
+                });
+
+            modelBuilder.Entity("Chatly.Models.Notification", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ActionUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsRead")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Notification");
                 });
 
             modelBuilder.Entity("Chatly.Models.Participant", b =>
@@ -133,7 +152,7 @@ namespace Chatly.Migrations
                     b.ToTable("Participant");
                 });
 
-            modelBuilder.Entity("Chatly.Models.Reaction", b =>
+            modelBuilder.Entity("Chatly.Models.Request", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -141,57 +160,37 @@ namespace Chatly.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int?>("ChatId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("CreatedById")
+                    b.Property<string>("FromUserId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("MessageId")
+                    b.Property<DateTime?>("RespondedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Status")
                         .HasColumnType("int");
+
+                    b.Property<string>("ToUserId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("Type")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CreatedById");
-
-                    b.HasIndex("MessageId");
-
-                    b.ToTable("Reaction");
-                });
-
-            modelBuilder.Entity("Chatly.Models.Topic", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("ChatId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedById")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
                     b.HasIndex("ChatId");
 
-                    b.HasIndex("CreatedById");
+                    b.HasIndex("FromUserId");
 
-                    b.ToTable("Topic");
+                    b.HasIndex("ToUserId");
+
+                    b.ToTable("Request");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -408,43 +407,43 @@ namespace Chatly.Migrations
                     b.Property<string>("AvatarUrl")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Role")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
                     b.HasDiscriminator().HasValue("User");
-                });
-
-            modelBuilder.Entity("Chatly.Models.Media", b =>
-                {
-                    b.HasOne("Chatly.Models.Message", "Message")
-                        .WithMany("Media")
-                        .HasForeignKey("MessageId")
-                        .OnDelete(DeleteBehavior.NoAction);
-
-                    b.HasOne("Chatly.Models.User", "User")
-                        .WithMany("Media")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.NoAction);
-
-                    b.Navigation("Message");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Chatly.Models.Message", b =>
                 {
+                    b.HasOne("Chatly.Models.Chat", "Chat")
+                        .WithMany("Messages")
+                        .HasForeignKey("ChatId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
                     b.HasOne("Chatly.Models.User", "CreatedBy")
                         .WithMany("Messages")
                         .HasForeignKey("CreatedById")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("Chatly.Models.Topic", "Topic")
-                        .WithMany("Messages")
-                        .HasForeignKey("TopicId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
+                    b.Navigation("Chat");
 
                     b.Navigation("CreatedBy");
+                });
 
-                    b.Navigation("Topic");
+            modelBuilder.Entity("Chatly.Models.Notification", b =>
+                {
+                    b.HasOne("Chatly.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Chatly.Models.Participant", b =>
@@ -466,42 +465,28 @@ namespace Chatly.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Chatly.Models.Reaction", b =>
-                {
-                    b.HasOne("Chatly.Models.User", "CreatedBy")
-                        .WithMany("Reactions")
-                        .HasForeignKey("CreatedById")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Chatly.Models.Message", "Message")
-                        .WithMany("Reactions")
-                        .HasForeignKey("MessageId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("CreatedBy");
-
-                    b.Navigation("Message");
-                });
-
-            modelBuilder.Entity("Chatly.Models.Topic", b =>
+            modelBuilder.Entity("Chatly.Models.Request", b =>
                 {
                     b.HasOne("Chatly.Models.Chat", "Chat")
-                        .WithMany("Topics")
-                        .HasForeignKey("ChatId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .WithMany()
+                        .HasForeignKey("ChatId");
+
+                    b.HasOne("Chatly.Models.User", "FromUser")
+                        .WithMany()
+                        .HasForeignKey("FromUserId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Chatly.Models.User", "CreatedBy")
+                    b.HasOne("Chatly.Models.User", "ToUser")
                         .WithMany()
-                        .HasForeignKey("CreatedById")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ToUserId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Chat");
 
-                    b.Navigation("CreatedBy");
+                    b.Navigation("FromUser");
+
+                    b.Navigation("ToUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -557,32 +542,16 @@ namespace Chatly.Migrations
 
             modelBuilder.Entity("Chatly.Models.Chat", b =>
                 {
-                    b.Navigation("Participants");
-
-                    b.Navigation("Topics");
-                });
-
-            modelBuilder.Entity("Chatly.Models.Message", b =>
-                {
-                    b.Navigation("Media");
-
-                    b.Navigation("Reactions");
-                });
-
-            modelBuilder.Entity("Chatly.Models.Topic", b =>
-                {
                     b.Navigation("Messages");
+
+                    b.Navigation("Participants");
                 });
 
             modelBuilder.Entity("Chatly.Models.User", b =>
                 {
                     b.Navigation("ChatUsers");
 
-                    b.Navigation("Media");
-
                     b.Navigation("Messages");
-
-                    b.Navigation("Reactions");
                 });
 #pragma warning restore 612, 618
         }

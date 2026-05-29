@@ -10,125 +10,70 @@ using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 using Chatly.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Data;
 
 namespace Chatly.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class UserController: ControllerBase
+    public class UserController : ControllerBase
     {
-        private readonly ILogger<AuthController> _logger;
-        private readonly UserManager<User> _userManager;
-        private readonly IChatService _chatService;
-        private readonly IFileStorageService _fileStorageService;
-        private readonly ApplicationDbContext _context;
+        private readonly IUserService _userService;
+
+        public UserController(IUserService userService)
+        {
+            _userService = userService;
+        }
+
         private string GetUserId()
-        {
-            return User.FindFirstValue(ClaimTypes.NameIdentifier) ?? string.Empty;
-        }
-
-        public UserController(
-            ILogger<AuthController> logger,
-            UserManager<User> userManager,
-            IFileStorageService fileStorageService,
-            ApplicationDbContext context,
-            IChatService chatService
-            )
-        {
-            _logger = logger;
-            _userManager = userManager;
-            _fileStorageService = fileStorageService;
-            _context = context;
-            _chatService = chatService;
-        }
-
+            => User.FindFirstValue(ClaimTypes.NameIdentifier) ?? string.Empty;
 
         [HttpPost("create")]
-        public async Task<IActionResult> CreateUser([FromForm] RegisterDTO body)
+        public async Task<IActionResult> CreateUser(RegisterDTO dto)
         {
-            if (body.Password != body.ConfirmPassword)
-                return BadRequest("Passwords do not match");
-
-            string? avatarURL = null;
-
-            if (body.Avatar != null)
+            try
             {
-                avatarURL = await _fileStorageService.SaveImageAsync(
-                    body.Avatar,
-                    "avatars"
-                );
+                await _userService.CreateUser(dto);
+                return Ok("User created successfully");
             }
-
-            var user = new User
+            catch (Exception ex)
             {
-                Email = body.Email,
-                UserName = body.Email,
-                AvatarUrl = avatarURL,
-            };
-
-            var result = await _userManager.CreateAsync(user, body.Password);
-
-            if (!result.Succeeded)
-                return BadRequest(result.Errors);
-
-            return Ok("User created successfully");
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpGet]
         [Authorize]
         public async Task<IActionResult> GetUser()
         {
-            var userId = GetUserId();
+            var result = await _userService.GetCurrentUser(GetUserId());
 
-            if (string.IsNullOrEmpty(userId))
-                return Unauthorized();
-
-            var user = await _userManager.FindByIdAsync(userId);
-
-            if (user == null)
+            if (result == null)
                 return NotFound();
 
-            return Ok(new
-            {
-                user.Id,
-                user.Email,
-                user.AvatarUrl
-            });
+            return Ok(result);
         }
 
         [HttpGet("search")]
-        public async Task<IActionResult> SearchUsers([FromQuery] string query)
+        public async Task<IActionResult> SearchUsers(string query)
         {
-            var users = await _userManager.Users
-                .Where(u => u.Email != null && u.Email.Contains(query))
-                .Select(u => new
-                {
-                    u.Id,
-                    u.Email,
-                    u.AvatarUrl
-                })
-                .Take(20)
-                .ToListAsync();
-            var userId = GetUserId();
-
-            var chats = await _context.Chat
-                .Where(c =>
-                    c.Type == ChatType.User &&
-                    c.Participants.Any(p => p.UserId == userId)
-                )
-                .SelectMany(c => c.Participants)
-                .Select(p => p.UserId)
-                .ToListAsync();
-
-            var result = users.Select(u => new
-            {
-                u.Id,
-                u.Email,
-                u.AvatarUrl,
-                HasChat = chats.Contains(u.Id)
-            });
-
+            var result = await _userService.SearchUsers(query, GetUserId());
             return Ok(result);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateUser(string id, UpdateUserDTO dto)
+        {
+            await _userService.UpdateUser(id, dto);
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteUser(string id)
+        {
+            await _userService.DeleteUser(id);
+            return NoContent();
         }
     }
 }

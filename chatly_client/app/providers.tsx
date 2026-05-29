@@ -1,19 +1,29 @@
 "use client"
 
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
-import { AuthProvider } from "@/context/providers/AuthProvider";
 import { ChatProvider } from "@/context/providers/ChatProvider";
+import { Navigation } from "@/components/layout/Navigation/Navigation";
+import { NotificationProvider } from "@/context/providers/NotificationProvider";
+import { Toast, ToastQueue } from "@heroui/react";
+import { queryClient } from "@/api/queries/queryClient";
+import { ModalProvider } from "@/context/providers/ModalProvider";
 
-const queryClient = new QueryClient();
+export const notificationQueue = new ToastQueue({ maxVisibleToasts: 4 });
 
 export const Providers = ({ children }: { children: React.ReactNode }) => {
+
     return (
         <QueryClientProvider client={queryClient}>
-            <AuthProvider>
+            <Toast.Provider queue={notificationQueue} placement="top end" />
+            <NotificationProvider>
                 <ChatProvider>
-                    {children}
+                    <div className="w-full h-full flex flex-col items-start justify-between gap-4">
+                        <Navigation />
+                        {children}
+                    </div>
+                    <ModalProvider />
                 </ChatProvider>
-            </AuthProvider>
+            </NotificationProvider>
         </QueryClientProvider>
     )
 }

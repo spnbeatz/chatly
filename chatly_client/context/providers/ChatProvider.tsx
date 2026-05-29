@@ -1,244 +1,48 @@
 "use client";
 
-import { createContext, useContext, useEffect, useRef, useState } from "react";
-import * as signalR from "@microsoft/signalr";
-import { chatService } from "@/api/services/chat";
-import { ChatState, ChatMessage, ChatTopic } from "@/types/chat";
-import { useUserStore } from "../store/user";
+import React, { createContext, useContext, useEffect } from "react";
 
-interface ChatProviderProps {
-    children: React.ReactNode;
-}
 
-type ChatProviderValue = {
-    chats: Record<string, ChatState>;
+import { useChatState } from "@/hooks/chat/useChatState";
+import { useSignalR } from "@/hooks/chat/useSignalR";
+import { useChatRealtime } from "@/hooks/chat/useChatRealtime";
+import { useActiveChat } from "@/api/queries/chats/chats.query";
+import { ShowChatDTO } from "@/types/chat";
+import { queryClient } from "@/api/queries/queryClient";
+
+type ChatContextType = {
     activeChatId: number | null;
-    activeTopicId: number | null;
-    activeChatMessages: ChatMessage[];
-    activeChatTopics: ChatTopic[];
-    getSenderName: (senderId: string) => string;
-    getActiveChat: () => ChatState | null;
-    openChat: (chatId: string) => void;
-    openTopic: (topicId: string) => void;
-    sendMessage: (chatId: string, content: string) => void;
+    setActiveChatId: (id: number | null) => void;
+    sendMessage: (chatId: number, content: string) => Promise<void>;
+    activeChat?: ShowChatDTO;
 };
 
-const ChatContext = createContext<ChatProviderValue | null>(null);
+const ChatContext = createContext<ChatContextType | null>(null);
 
-export function ChatProvider({ children }: ChatProviderProps) {
-    const connectionRef = useRef<signalR.HubConnection | null>(null);
-    const { user } = useUserStore();
+export function ChatProvider({
+    children
+}: {
+    children: React.ReactNode;
+}) {
 
-    const [activeChatId, setActiveChatId] = useState<number | null>(null);
-    const [activeTopicId, setActiveTopicId] = useState<number | null>(null);
-    const [activeChatMessages, setActiveChatMessages] = useState<ChatMessage[]>([]);
-    const [activeChatTopics, setActiveChatTopics] = useState<ChatTopic[]>([]);
-
-    const activeChatRef = useRef<number | null>(null);
-    const activeTopicRef = useRef<number | null>(null);
-
-    const [chats, setChats] = useState<Record<string, ChatState>>({});
-
-    // 🔌 SIGNALR
-    useEffect(() => {
-        const connection = new signalR.HubConnectionBuilder()
-            .withUrl("https://localhost:7119/chatHub", {
-                withCredentials: true
-            })
-            .withAutomaticReconnect()
-            .build();
-
-        connectionRef.current = connection;
-
-        connection.on("ReceiveMessage", (msg) => {
-            handleIncomingMessage(msg);
-        });
-
-        const start = async () => {
-            try {
-                await connection.start();
-                console.log("SignalR connected");
-            } catch (err) {
-                console.error("SignalR error:", err);
-            }
-        };
-
-        start();
-
-        return () => {
-            connection.off("ReceiveMessage");
-            connection.stop();
-        };
-    }, []);
-
-    // 📥 FETCH CHATS
-    useEffect(() => {
-        const fetchChats = async () => {
-            try {
-                const res = await chatService.listChats();
-
-                const mapped: Record<string, ChatState> = res.reduce(
-                    (acc: Record<number, ChatState>, chat: any) => {
-                        acc[chat.chatId] = {
-                            name: chat.name || 'Unknown',
-                            user: chat.otherUser ?? null,
-                            unread: 0,
-                            lastMessage: chat.lastMessage ?? null
-                        };
-
-                        return acc;
-                    },
-                    {}
-                );
-
-                setChats(mapped);
-            } catch (error) {
-                console.error("Error fetching chats:", error);
-            }
-        };
-
-        fetchChats();
-    }, []);
-
-    // 📩 INCOMING MESSAGE
-    function handleIncomingMessage(msg: ChatMessage) {
-        console.log("Received message:", msg);
-
-        if (msg.topicId !== activeTopicRef.current || msg.chatId !== activeChatRef.current) {
-
-            setChats((prev) => {
-                const chat = prev[msg.chatId];
-
-                if (!chat) return prev;
-                const updated = { ...prev };
-                updated[msg.chatId] = {
-                    ...chat,
-                    unread: chat.unread + 1
-                };
-                return updated;
-
-            })
-        } else if (msg.topicId !== activeTopicRef.current && msg.chatId === activeChatRef.current) {
-            setActiveChatTopics(prev =>
-                prev.map(t =>
-                    Number(t.id) === msg.topicId
-                        ? { ...t, unread: (t.unread ?? 0) + 1 }
-                        : t
-                )
-            );
-        } else {
-            console.log("Message is for active chat/topic, adding to messages");
-            setActiveChatMessages((prev) => [...prev, msg]);
-        }
-    }
-
-    // 📤 SEND MESSAGE
-    async function sendMessage(topicId: string, content: string) {
-        await connectionRef.current?.invoke(
-            "SendMessage",
-            Number(topicId),
-            content
-        );
-    }
-
-
-    // 📂 OPEN CHAT
-    async function openChat(chatId: string) {
-        setActiveChatId(Number(chatId));
-        setChats((prev) => {
-            const chat = prev[chatId];
-            if (!chat) return prev;
-            const updated = { ...prev };
-            updated[chatId] = {
-                ...chat,
-                unread: 0
-            };
-            return updated;
-        }
-        );
-    }
-
-    async function openTopic(topicId: string) {
-        setActiveTopicId(Number(topicId));
-    }
-
-    useEffect(() => {
-        if (!activeChatId) return;
-        console.log("Active chat changed:", activeChatId);
-        const fetchTopics = async () => {
-            try {
-                const res = await chatService.getChatTopics(String(activeChatId));
-                setActiveChatTopics(res);
-                setActiveTopicId(res[0]?.id ?? null);
-                console.log("Fetched topics for chat", activeChatId, res);
-            } catch (error) {
-                console.error("Error fetching topics:", error);
-            }
-        };
-        fetchTopics();
-    }, [activeChatId]);
-
-    useEffect(() => {
-        activeChatRef.current = activeChatId;
-    }, [activeChatId]);
+    const {
+        activeChatId,
+        setActiveChatId
+    } = useChatState();
 
 
 
-    useEffect(() => {
-        console.log("Active topic changed:", activeTopicId);
-        const fetchMessages = async () => {
-            if (!activeChatId || !activeTopicId) return;
-            try {
-                const res = await chatService.getTopicMessages(String(activeTopicId));
-                setActiveChatMessages(res);
-                console.log("Fetched messages for topic", activeTopicId, res);
-            } catch (error) {
-                console.error("Error fetching messages:", error);
-
-            }
-        }
-        fetchMessages();
-    }, [activeTopicId]);
-
-    useEffect(() => {
-        activeTopicRef.current = activeTopicId;
-    }, [activeTopicId]);
-
-    const getSenderName = (senderId: string) => {
-        if (!senderId) return "Unknownssssss";
-
-        if (String(senderId) === String(user?.id)) return "You";
-
-        const chat = activeChatId ? chats[String(activeChatId)] : null;
-        if (!chat) return "Unknownsss";
-        
-        const sender = Array.isArray(chat.user)
-            ? chat.user.find(u => String(u.id) === String(senderId))
-            : chat.user && String(chat.user.id) === String(senderId)
-                ? chat.user
-                : null;
-
-        return sender?.email ?? "sss";
-    };
-
-    const getActiveChat = () => {
-        if (!activeChatId) return null;
-        return chats[String(activeChatId)] ?? null;
-    }
+    const { data: activeChat } = useActiveChat(activeChatId);
+    const connection = useSignalR();
+    const { sendMessage } = useChatRealtime(connection);
 
     return (
         <ChatContext.Provider
             value={{
-                chats,
                 activeChatId,
-                activeTopicId,
-                activeChatMessages,
-                activeChatTopics,
-                getActiveChat,
-                getSenderName,
-                openChat,
-                openTopic,
-                sendMessage
+                setActiveChatId,
+                sendMessage,
+                activeChat
             }}
         >
             {children}
@@ -246,8 +50,15 @@ export function ChatProvider({ children }: ChatProviderProps) {
     );
 }
 
-export const useChat = () => {
+// hook
+export function useChat() {
     const ctx = useContext(ChatContext);
-    if (!ctx) throw new Error("useChat must be used within ChatProvider");
+
+    if (!ctx) {
+        throw new Error(
+            "useChat must be used within ChatProvider"
+        );
+    }
+
     return ctx;
-};
+}

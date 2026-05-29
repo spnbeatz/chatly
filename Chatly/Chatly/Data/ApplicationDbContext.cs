@@ -12,11 +12,10 @@ namespace Chatly.Data
         }
 
         public DbSet<Chat> Chat {  get; set; }
-        public DbSet<Media> Media { get; set; }
         public DbSet<Message> Message { get; set; }
         public DbSet<Participant> Participant { get; set; }
-        public DbSet<Reaction> Reaction { get; set; }
-        public DbSet<Topic> Topic { get; set; }
+        public DbSet<Notification> Notification { get; set; }
+        public DbSet<Request> Request { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -42,27 +41,9 @@ namespace Chatly.Data
                 .OnDelete(DeleteBehavior.NoAction);
 
             modelBuilder.Entity<Message>()
-                .HasOne(m => m.Topic)
+                .HasOne(m => m.Chat)
                 .WithMany(t => t.Messages)
-                .HasForeignKey(m => m.TopicId)
-                .OnDelete(DeleteBehavior.NoAction);
-
-            modelBuilder.Entity<Topic>()
-                .HasOne(t => t.Chat)
-                .WithMany(c => c.Topics)
-                .HasForeignKey(t => t.ChatId)
-                .OnDelete(DeleteBehavior.NoAction);
-
-            modelBuilder.Entity<Media>()
-                .HasOne(m => m.Message)
-                .WithMany(msg => msg.Media)
-                .HasForeignKey(m => m.MessageId)
-                .OnDelete(DeleteBehavior.NoAction);
-
-            modelBuilder.Entity<Media>()
-                .HasOne(m => m.User)
-                .WithMany(u => u.Media)
-                .HasForeignKey(m => m.UserId)
+                .HasForeignKey(m => m.ChatId)
                 .OnDelete(DeleteBehavior.NoAction);
 
             modelBuilder.Entity<Participant>()
@@ -71,7 +52,17 @@ namespace Chatly.Data
                 .HasForeignKey(x => x.ChatId)
                 .OnDelete(DeleteBehavior.NoAction);
 
+            modelBuilder.Entity<Request>()
+                .HasOne(r => r.FromUser)
+                .WithMany()
+                .HasForeignKey(r => r.FromUserId)
+                .OnDelete(DeleteBehavior.Restrict);
 
+            modelBuilder.Entity<Request>()
+                .HasOne(r => r.ToUser)
+                .WithMany()
+                .HasForeignKey(r => r.ToUserId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }
