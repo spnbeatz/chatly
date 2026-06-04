@@ -1,4 +1,5 @@
 ﻿using Chatly.Controllers.DTOs;
+using Chatly.Controllers.DTOs.UserDTOs;
 using Chatly.Data;
 using Chatly.Interfaces;
 using Chatly.Models;
@@ -39,7 +40,7 @@ namespace Chatly.Services
             {
                 Email = body.Email,
                 UserName = body.Email,
-                AvatarUrl = avatarUrl
+                AvatarUrl = avatarUrl,
             };
 
             var result = await _userManager.CreateAsync(user, body.Password);
@@ -55,7 +56,7 @@ namespace Chatly.Services
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null) return null;
 
-            var role = (await _userManager.GetRolesAsync(user)).FirstOrDefault();
+            var role = await GetRole(userId);
 
             return new
             {
@@ -65,6 +66,27 @@ namespace Chatly.Services
                 user.Status,
                 Role = role
             };
+        }
+
+        public async Task<UserDTO[]> GetUsers(string? query)
+        {
+            var users = await _context.Users
+                .Where(u => string.IsNullOrEmpty(query) || u.Email!.Contains(query))
+                .ToListAsync();
+
+            var result = new List<UserDTO>();
+
+            foreach (var user in users)
+            {
+                result.Add(
+                    new UserDTO(
+                        user,
+                        await GetRole(user.Id)
+                    )
+                );
+            }
+
+            return result.ToArray();
         }
 
         public async Task<List<UserSearchDto>> SearchUsers(string query, string currentUserId)
@@ -128,14 +150,34 @@ namespace Chatly.Services
             }
         }
 
-        public async Task DeleteUser(string id)
+        public async Task ChangeStatus(string id, Status status)
         {
             var user = await _userManager.FindByIdAsync(id);
 
             if (user == null)
                 throw new Exception("User not found");
 
-            await _userManager.DeleteAsync(user);
+            user.Status = status;
+
+            await _userManager.UpdateAsync(user);
+        }
+
+        public async Task ChangeEmail(string id, string email)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+
+            if (user == null) throw new Exception("No user");
+
+            await _userManager.SetEmailAsync(user, email);
+        }
+
+        private async Task<string> GetRole(string userId)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null) return "User";
+
+            var role = (await _userManager.GetRolesAsync(user)).FirstOrDefault();
+            return role;
         }
     }
 }

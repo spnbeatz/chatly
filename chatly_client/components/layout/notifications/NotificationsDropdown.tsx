@@ -1,56 +1,25 @@
-import { useInfoModalStore } from "@/context/store/modal";
-import { useNotificationStore } from "@/context/store/notification";
-import { notificationService } from "@/api/services/notification.service";
+
 import { NotificationDto } from "@/types/notification";
 import { Badge, Dropdown } from "@heroui/react";
 import { FaBell } from "react-icons/fa";
 import { Header } from "@heroui/react";
 import { CgUserAdd } from "react-icons/cg";
-import { Button } from "@heroui/react";
 import { formatChatDate } from "@/utils/date";
+import { useNotifications } from "@/api/queries/notifications/notifications.query";
+import { useMarkNotificationAsRead } from "@/api/queries/notifications/notifications.mutation";
 
 export const NotificationsDropdown = () => {
-    const { notifications, markAsRead } = useNotificationStore();
-    const { openModal } = useInfoModalStore();
+    const { data: notifications = [] } = useNotifications();
+    const { mutateAsync: markAsRead } = useMarkNotificationAsRead();
 
     const handleNotificationClick = async (notification: NotificationDto) => {
         if (!notification.isRead) {
             try {
-                await notificationService.markAsRead(String(notification.id));
-                markAsRead(notification.id);
+                await markAsRead(notification.id);
             } catch (error) {
                 console.error("Error marking notification as read:", error);
-                openModal({
-                    title: "Error",
-                    description: "Failed to mark notification as read. Please try again."
-                });
                 return;
             }
-        }
-
-        if (notification.actionUrl) {
-            window.open(notification.actionUrl, "_blank");
-        }
-    };
-
-    const handleAcceptRequest = async (notification: NotificationDto) => {
-        // actionUrl should contain the id of the request to accept
-    }
-
-    const handleRejectRequest = async (notification: NotificationDto) => {
-
-    }
-
-    const getButtonText = (notification: NotificationDto) => {
-        switch (notification.type) {
-            case "FriendRequest":
-                return "Accept";
-            case "ChatInvite":
-                return "Join";
-            case "Message":
-                return "View";
-            default:
-                return "View";
         }
     };
 

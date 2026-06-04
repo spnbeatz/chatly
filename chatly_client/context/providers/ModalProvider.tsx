@@ -4,6 +4,7 @@ import { GroupFindModal } from "@/components/shared/modals/GroupFindModal";
 import { GroupCreateModal } from "@/components/shared/modals/GroupCreateModal";
 import { ChatDetailsModal } from "@/components/shared/modals/ChatDetailsModal";
 import { UserSearchModal } from "@/components/shared/modals/UserSearchModal";
+import { UserEditModal } from "@/components/shared/modals/UserEditModal";
 
 export const ModalProvider = () => {
     return (
@@ -14,6 +15,7 @@ export const ModalProvider = () => {
             <GroupCreateModal />
             <ChatDetailsModal />
             <UserSearchModal />
+            <UserEditModal />
         </>
     )
 }

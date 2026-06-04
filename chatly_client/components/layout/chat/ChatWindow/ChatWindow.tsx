@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Header, Avatar, TextArea } from "@heroui/react";
 import { useChat } from "@/context/providers/ChatProvider";
 import { useMessages } from "@/api/queries/messages/messages.query";
-import { useActiveChat } from "@/api/queries/chats/chats.query";
 import { MessageRow } from "./MessageRow";
 import { InfoCenteredText } from "@/components/shared/InfoCenteredText";
 
@@ -33,7 +32,6 @@ export const ChatWindow = () => {
     return (
         <div className="w-full h-full bg-white dark:bg-black/80 rounded-md shadow-medium p-6 flex flex-col">
             
-            {/* HEADER */}
             <Header className="w-full flex flex-row items-center justify-start">
                 <Avatar className="mr-4">
                     <Avatar.Fallback>AV</Avatar.Fallback>
@@ -43,7 +41,6 @@ export const ChatWindow = () => {
                 </div>
             </Header>
 
-            {/* MESSAGES */}
             <div className="flex-1 overflow-y-auto p-4 flex flex-col-reverse">
                 {activeChatMessages.length === 0 ? (
                     <InfoCenteredText 
@@ -57,8 +54,7 @@ export const ChatWindow = () => {
                 )}
             </div>
 
-            {/* INPUT */}
-            <div className="flex flex-row items-center gap-2">
+            {activeChat && <div className="flex flex-row items-center gap-2">
                 <TextArea
                     className="flex-1"
                     placeholder="Type a message..."
@@ -79,7 +75,7 @@ export const ChatWindow = () => {
                 >
                     Send
                 </button>
-            </div>
+            </div>}
         </div>
     );
 };

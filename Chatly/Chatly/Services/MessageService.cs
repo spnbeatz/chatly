@@ -44,7 +44,6 @@ namespace Chatly.Services
                 ChatId = chatId,
                 CreatedById = userId,
                 Content = content,
-                IsPinned = false,
                 Status = MessageStatus.Active
             };
 
@@ -72,7 +71,6 @@ namespace Chatly.Services
                     CreatedBy = message.CreatedBy,
                     UpdatedAt = DateTime.UtcNow,
                     ChatId = message.ChatId,
-                    IsPinned = dto.IsPinned ?? message.IsPinned,
                     Status = MessageStatus.Edited
                 };
 
@@ -108,7 +106,6 @@ namespace Chatly.Services
                 CreatedBy = message.CreatedBy,
                 UpdatedAt = DateTime.UtcNow,
                 ChatId = message.ChatId,
-                IsPinned = message.IsPinned,
                 Status = MessageStatus.Deleted
             };
 

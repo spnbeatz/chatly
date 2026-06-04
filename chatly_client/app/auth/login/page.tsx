@@ -14,6 +14,7 @@ import { LoginFormData, loginSchema } from "@/utils/validation";
 import { useRouter } from "next/navigation";
 import { InputLabel } from "@/components/shared/InputLabel";
 import { useLogin } from "@/api/queries/auth/auth.mutation";
+import { useState } from "react";
 
 export default function LoginPage() {
     const {
@@ -27,13 +28,16 @@ export default function LoginPage() {
     const router = useRouter();
     const { mutateAsync: login } = useLogin();
 
+    const [ errorMessage, setErrorMessage ] = useState<string | null>(null);
+
 
     const onSubmit = async (data: LoginFormData) => {
         try {
             await login(data);
             router.push("/");
-        } catch (error) {
-            console.error("Login failed:", error);
+        } catch (error: any) {
+            console.error("Login failed:", JSON.parse(error.message).message);
+            setErrorMessage(JSON.parse(error.message).message || "Login failed. Please try again.");
         }
     };
 
@@ -77,6 +81,11 @@ export default function LoginPage() {
                     <FieldError>{errors.password?.message}</FieldError>
                 </TextField>
             </Fieldset.Group>
+            {errorMessage && (
+                <Description className="text-xs text-red-500 p-0">
+                    {errorMessage}
+                </Description>
+            )}
 
             <Fieldset.Actions className="flex justify-end gap-3">
                 <Button

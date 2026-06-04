@@ -14,10 +14,9 @@ export const MemberOptionsDropdown = ({ member, isAdmin }: { member: ChatMember,
 
     return (
         <Dropdown>
-            <Dropdown.Trigger className="absolute right-0 top-1/2 -translate-y-1/2">
-                <Button variant="ghost" className={"opacity-0 bg-default group-hover:opacity-100 duration-200"}>
-                    <MdSettings size={20} />
-                </Button>
+            <Dropdown.Trigger className="absolute right-0 top-1/2 -translate-y-1/2  opacity-0 bg-default 
+            group-hover:opacity-100 duration-200 h-full aspect-square flex items-center justify-center p-0">
+                <MdSettings size={16} className="text-black/60"/>
             </Dropdown.Trigger>
             <Dropdown.Popover>
                 <Dropdown.Menu className="text-black/60">

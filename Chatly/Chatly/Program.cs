@@ -2,19 +2,17 @@ using Chatly.Data;
 using Chatly.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
 using Microsoft.Extensions.FileProviders;
 using Chatly.Interfaces;
 using Chatly.Services;
 using Chatly.Hubs;
 using Chatly.Roles;
 using Chatly.Middlewares;
+using System.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
@@ -39,7 +37,7 @@ builder.Services.ConfigureApplicationCookie(options =>
 {
     options.Cookie.HttpOnly = true;
     options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
-    options.Cookie.SameSite = SameSiteMode.None; // dla React na innym porcie
+    options.Cookie.SameSite = SameSiteMode.None;
 
     options.Events.OnRedirectToLogin = ctx =>
     {
@@ -79,6 +77,37 @@ app.UseMiddleware<ExceptionMiddleware>();
 using (var scope = app.Services.CreateScope())
 {
     await RoleSeeder.SeedRolesAsync(scope.ServiceProvider);
+    var userManager = scope.ServiceProvider
+    .GetRequiredService<UserManager<User>>();
+
+    var admin = await userManager.FindByEmailAsync("admin@chatly.com");
+
+    if (admin == null)
+    {
+        admin = new User
+        {
+            UserName = "admin",
+            Email = "admin@chatly.com",
+            Status = Status.Active
+        };
+
+        var result = await userManager.CreateAsync(
+            admin,
+            "Admin123!"
+        );
+
+        if (!result.Succeeded)
+        {
+            foreach (var error in result.Errors)
+            {
+                Console.WriteLine($"{error.Code}: {error.Description}");
+            }
+        }
+        else
+        {
+            await userManager.AddToRoleAsync(admin, "Admin");
+        }
+    }
 }
 
 // Configure the HTTP request pipeline.

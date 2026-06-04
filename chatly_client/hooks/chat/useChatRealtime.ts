@@ -55,11 +55,13 @@ export function useChatRealtime(connection: any) {
     const sendMessage = async (chatId: number, content: string) => {
         if (!connection) return;
 
-        await connection.invoke(
+        const result = await connection.invoke(
             "SendMessage",
             chatId,
             content
         );
+
+        console.log("Message sent, server response:", result);
     };
 
     return {

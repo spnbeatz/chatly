@@ -1,9 +1,12 @@
 
+using System.ComponentModel.DataAnnotations;
+
 namespace Chatly.Models
 {
     public class Chat
     {
         public int Id { get; set; }
+        [MaxLength(30)]
         public string Name { get; set; } = string.Empty;
         public List<Participant> Participants { get; set; } = new();
         public List<Message> Messages { get; set; } = new();

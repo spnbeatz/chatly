@@ -3,9 +3,6 @@ using Chatly.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using Chatly.Controllers.DTOs;
-using Chatly.Interfaces;
-using Chatly.Services;
-using Humanizer;
 
 namespace Chatly.Controllers
 {
@@ -16,21 +13,15 @@ namespace Chatly.Controllers
         private readonly ILogger<AuthController> _logger;
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
-        private readonly IAuthService _authService;
-        private readonly IFileStorageService _fileStorageService;
 
         public AuthController(
             ILogger<AuthController> logger,
             UserManager<User> userManager,
-            SignInManager<User> signInManager,
-            IAuthService authService,
-            IFileStorageService fileStorageService)
+            SignInManager<User> signInManager)
         {
             _logger = logger;
             _userManager = userManager;
             _signInManager = signInManager;
-            _authService = authService;
-            _fileStorageService = fileStorageService;
         }
 
         [HttpPost("login")]
@@ -39,13 +30,26 @@ namespace Chatly.Controllers
             var user = await _userManager.FindByEmailAsync(body.Email);
 
             if (user == null)
+            {
+                Console.WriteLine("AuthController - login failed - user not found");
                 return Unauthorized(new
                 {
                     message = "User not found"
                 });
+            }
+
+
+            if (user.Status == Status.Blocked)
+            {
+                Console.WriteLine("AuthController - login failed - user has been blocked");
+                return Unauthorized(new
+                {
+                    message = "User has been blocked"
+                });
+            }
 
             var result = await _signInManager.CheckPasswordSignInAsync(user, body.Password, false);
-            
+
 
             if (!result.Succeeded)
                 return Unauthorized(new

@@ -8,8 +8,8 @@ class NotificationService extends Service {
         );
     }
 
-    async markAsRead(notificationId: string): Promise<void> {
-        return this.post(
+    async markAsRead(notificationId: number): Promise<void> {
+        return this.put(
             `/notification/${notificationId}/read`
         );
     }

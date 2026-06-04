@@ -1,11 +1,11 @@
 import { Modal } from "@heroui/react";
 import { IconType } from "react-icons";
 
-export const ModalHeader = ({ title, description, Icon }: { title: string, description?: string, Icon: IconType }) => {
+export const ModalHeader = ({ title, description, Icon, type }: { title: string, description?: string, Icon?: IconType, type?: "info" | "danger" }) => {
     return (
         <Modal.Header className="text-black/60">
             <div className="flex flex-row gap-2">
-                <Icon size={22} />
+                {Icon && <Icon size={22} color={type === "danger" ? "red" : "blue"} />}
                 <p>{title}</p>
             </div>
             {description && (

@@ -26,3 +26,29 @@ export function useRegisterUser() {
             userService.registerUser(data),
     });
 }
+
+export function useChangeEmail() {
+    return useMutation({
+        mutationFn: ({userId, email}: {userId: string, email: string}) =>
+            userService.changeEmail(
+                userId,
+                email
+            ),
+        onSuccess: () => {
+            queryClient.invalidateQueries({
+                queryKey: usersKeys.list()
+            });
+        }
+    });
+}
+
+export function useChangeUserStatus() {
+    return useMutation({
+        mutationFn: ({userId, status}: {userId: string, status: "Active" | "Blocked" | "Inactive"}) => userService.changeStatus(userId, status),
+        onSuccess: () => {
+            queryClient.invalidateQueries({
+                queryKey: usersKeys.list()
+            });
+        }
+    });
+}

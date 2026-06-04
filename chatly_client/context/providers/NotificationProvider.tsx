@@ -1,21 +1,22 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { createNotifyConnection } from "@/websocket/notifyConnection";
 import { useNotificationStore } from "../store/notification";
 import { NotificationDto } from "@/types/notification";
 import { notificationService } from "@/api/services/notification.service";
-import { toast } from "@heroui/react";
 import { formatChatDate } from "@/utils/date";
 import { notificationQueue } from "@/app/providers";
 import { CgUserAdd } from "react-icons/cg";
 import { useUserStore } from "../store/user";
+import { useQueryClient } from "@tanstack/react-query";
+import { notificationsKeys } from "@/api/queries/notifications/notifications.keys";
 
 export const NotificationProvider = ({
     children,
 }: {
     children: React.ReactNode;
 }) => {
+    const queryClient = useQueryClient();
     const add = useNotificationStore((s) => s.add);
     const connectionRef = useRef<any>(null);
     const { user } = useUserStore();
@@ -47,8 +48,14 @@ export const NotificationProvider = ({
                 console.log("NotifyHub connected");
 
                 connection.on("notification", (data: NotificationDto) => {
-                    add(data);
-                    console.log("NEW NOTIFICATION:", data);
+                    queryClient.setQueryData(
+                        notificationsKeys.list(),
+                        (oldData: any) => {
+                            if (!oldData) return { notifications: [data] };
+                            return { notifications: [data, ...oldData.notifications] };
+                        }
+                    )
+
                     notificationQueue.add({
                         title: data.title,
                         description: `${data.description} - ${formatChatDate(data.createdAt)}`,

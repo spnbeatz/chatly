@@ -4,7 +4,7 @@ using Chatly.Models;
 
 namespace Chatly.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<User>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -63,6 +63,8 @@ namespace Chatly.Data
                 .WithMany()
                 .HasForeignKey(r => r.ToUserId)
                 .OnDelete(DeleteBehavior.Restrict);
+
         }
+
     }
 }

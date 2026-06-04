@@ -1,26 +1,33 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useCurrentUser } from "@/api/queries/users/users.query";
+import { Loading } from "./Loading";
 
-export const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
-    const { data: user } = useCurrentUser();
+export const ProtectedRoute = ({ children, role }: { children: React.ReactNode, role?: string  }) => {
+    
     const router = useRouter();
+    const { data: user, isLoading } = useCurrentUser();
 
     useEffect(() => {
+        if (isLoading) return;
+        console.log(user, "user logged");
         if (user === null) {
             router.push("/auth/login");
         }
-    }, [user]); // eslint-disable-line react-hooks/exhaustive-deps
+        if(role && user?.role !== role) {
+            router.push("/noaccess");
+        }
+    }, [user, isLoading, role, router]);
 
-    if (user === undefined) {
-        return <div>Loading...</div>;
+    if (isLoading) {
+        return <Loading />;
     }
 
-    if (user === null) {
+/*     if (user === null) {
         return null;
-    }
+    } */
 
     return <>{children}</>;
 };

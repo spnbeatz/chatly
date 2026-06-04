@@ -1,0 +1,7 @@
+1. Otworzyć projekt znajdujący się w folderze Chatly w Visual Studio
+2. Uruchomić komendę Update-Database
+3. Uruchomić projekt
+4. Otworzyć program Visual Studio Code
+5. Otworzyć w programie VSC folder chatly_client
+6. W terminalu z lokalizacją folderu chatly_client uruchomić komendę "npm install"
+7. W tym samym terminalu uruchomić projekt komendą "npm run dev"

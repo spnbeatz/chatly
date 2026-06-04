@@ -1,4 +1,5 @@
-﻿using Chatly.Models;
+﻿using System.ComponentModel.DataAnnotations;
+using Chatly.Models;
 
 namespace Chatly.Controllers.DTOs
 {
@@ -8,6 +9,7 @@ namespace Chatly.Controllers.DTOs
         public NotificationType Type { get; set; }
 
         public string Title { get; set; } = string.Empty;
+        [MaxLength(100)]
         public string Description { get; set; } = string.Empty;
 
         public string? ActionUrl { get; set; }

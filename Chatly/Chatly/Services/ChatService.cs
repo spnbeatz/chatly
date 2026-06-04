@@ -66,7 +66,6 @@ namespace Chatly.Services
                 _context.Chat.Add(chat);
                 await _context.SaveChangesAsync();
 
-                // creator
                 _context.Participant.Add(new Participant
                 {
                     ChatId = chat.Id,
@@ -74,7 +73,6 @@ namespace Chatly.Services
                     Role = "Admin"
                 });
 
-                // participants
                 foreach (var participantId in dto.Participants)
                 {
                     _context.Participant.Add(new Participant

@@ -10,7 +10,7 @@ class UserService extends Service {
         formData.append("Email", data.email);
         formData.append("Password", data.password);
         formData.append("ConfirmPassword", data.confirmPassword);
-        formData.append("Role", "User");
+        formData.append("Role", "Admin");
 
         if (data.avatar) {
             formData.append("Avatar", data.avatar);
@@ -41,9 +41,23 @@ class UserService extends Service {
         );
     }
 
-    async deleteUser(userId: string) {
-        return await this.delete(
-            `/user/${userId}`
+    async changeStatus(userId: string, status: "Active" | "Blocked" | "Inactive") {
+        return await this.put(
+            `/user/${userId}/status`,
+            status
+        );
+    }
+
+    async list(query?: string): Promise<User[]> {
+        return await this.get(
+            `/user/list${query ? `?query=${encodeURIComponent(query)}` : ""}`
+        );
+    }
+
+    async changeEmail(userId: string, email: string) {
+        return await this.put(
+            `/user/${userId}/email`,
+            { email }
         );
     }
 }

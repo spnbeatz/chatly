@@ -37,8 +37,10 @@ namespace Chatly.Hubs
         {
             var userId = Context.UserIdentifier;
 
-            if (!await _chatService.IsUserInChat(userId, chatId))
+            if (!await _chatService.IsUserInChat(userId, chatId)) { 
+                Console.WriteLine("Brak dostepu do chatu");
                 throw new Exception("Brak dostępu do chatu");
+            }
 
             var message = await _messageService.SaveMessage(chatId, userId, content);
 

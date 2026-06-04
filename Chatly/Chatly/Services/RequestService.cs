@@ -20,7 +20,6 @@ namespace Chatly.Services
         }
         
 
-        // CREATE
         public async Task CreateAsync(string fromUserId, CreateRequestDto dto)
         {
             var exists = await _context.Request.AnyAsync(r =>
@@ -70,7 +69,6 @@ namespace Chatly.Services
             
         }
 
-        // INCOMING
         public async Task<List<IncomingRequestDto>> GetIncomingAsync(string userId)
         {
             return await _context.Request
@@ -116,7 +114,6 @@ namespace Chatly.Services
                 .ToListAsync();
         }
 
-        // OUTGOING
         public async Task<List<OutgoingRequestDto>> GetOutgoingAsync(string userId)
         {
             return await _context.Request
@@ -156,7 +153,6 @@ namespace Chatly.Services
                 .FirstOrDefaultAsync();
         }
 
-        // ACCEPT
         public async Task<int?> AcceptAsync(int requestId, string userId)
         {
             var request = await _context.Request
@@ -192,7 +188,6 @@ namespace Chatly.Services
             return chatId;
         }
 
-        // REJECT
         public async Task<bool> RejectAsync(int requestId, string userId)
         {
             var request = await _context.Request
@@ -209,7 +204,6 @@ namespace Chatly.Services
             return true;
         }
 
-        // DELETE
         public async Task<bool> DeleteAsync(int requestId, string userId)
         {
             var request = await _context.Request

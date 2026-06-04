@@ -1,4 +1,6 @@
-﻿namespace Chatly.Controllers.DTOs
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Chatly.Controllers.DTOs
 {
     public class NotificationDto
     {
@@ -6,6 +8,7 @@
         public string Type { get; set; } = string.Empty;
 
         public string Title { get; set; } = string.Empty;
+        [MaxLength(100)]
         public string Description { get; set; } = string.Empty;
 
         public string? ActionUrl { get; set; }

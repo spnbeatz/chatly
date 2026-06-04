@@ -10,7 +10,6 @@ namespace Chatly.Controllers.DTOs
         public DateTime UpdatedAt { get; set; }
         public string CreatedById { get; set; }
         public int ChatId { get; set; }
-        public bool IsPinned { get; set; }
         public MessageStatus Status { get; set; }
 
         public ShowMessageDTO() { }
@@ -22,7 +21,6 @@ namespace Chatly.Controllers.DTOs
             UpdatedAt = message.UpdatedAt;
             CreatedById = message.CreatedById;
             ChatId = message.ChatId;
-            IsPinned = message.IsPinned;
             Status = message.Status;
 
         }

@@ -115,7 +115,6 @@ namespace Chatly.Controllers
             return Ok(new { message = "Request rejected" });
         }
 
-        // DELETE REQUEST
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

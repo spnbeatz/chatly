@@ -22,4 +22,12 @@ export function useSearchUsers(query: string, members: ChatMember[] | UserSearch
                 !members.some(m => m.id === u.id)
             )
     });
-}       
+}
+
+export function useUserList(query?: string) {
+    return useQuery({
+        queryKey: usersKeys.list(query),
+        queryFn: () => userService.list(query)
+    });
+
+}

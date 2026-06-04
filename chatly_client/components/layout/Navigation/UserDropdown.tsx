@@ -21,7 +21,7 @@ export const UserDropdown = () => {
     }
 
     return (
-        <Dropdown className="">
+        <Dropdown>
             <Dropdown.Trigger>
                 <div className="flex flex-row items-center justify-center gap-2">
                     <Avatar>

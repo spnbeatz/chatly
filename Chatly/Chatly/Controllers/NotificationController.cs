@@ -31,7 +31,6 @@ namespace Chatly.Controllers
             return User.FindFirstValue(ClaimTypes.NameIdentifier) ?? string.Empty;
         }
 
-        // GET: api/notification
         [HttpGet]
         public async Task<IActionResult> GetMyNotifications()
         {
@@ -90,7 +89,6 @@ namespace Chatly.Controllers
             return NoContent();
         }
 
-        // GET: api/notification/unread-count
         [HttpGet("unread-count")]
         public async Task<IActionResult> GetUnreadCount()
         {

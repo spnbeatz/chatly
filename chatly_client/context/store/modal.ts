@@ -1,13 +1,15 @@
+import { User } from "@/types/user";
 import { create } from "zustand";
 
 interface ConfirmationModalState {
     isOpen: boolean;
     modalText?: string;
     onConfirm?: () => void;
-
+    variant?: "info" | "danger"
     openModal: (options?: {
         text?: string;
         onConfirm?: () => void;
+        variant?: "info" | "danger";
     }) => void;
 
     closeModal: () => void;
@@ -17,12 +19,13 @@ export const useConfirmationModalStore = create<ConfirmationModalState>((set) =>
     isOpen: false,
     modalText: undefined,
     onConfirm: undefined,
-
-    openModal: ({ text, onConfirm } = {}) =>
+    variant: "info",
+    openModal: ({ text, onConfirm, variant } = {}) =>
         set({
             isOpen: true,
             modalText: text,
             onConfirm,
+            variant,
         }),
 
     closeModal: () =>
@@ -30,6 +33,7 @@ export const useConfirmationModalStore = create<ConfirmationModalState>((set) =>
             isOpen: false,
             modalText: undefined,
             onConfirm: undefined,
+            variant: "info",
         }),
 }));
 
@@ -104,4 +108,18 @@ export const useChatDetailsModalStore = create<ChatDetailsModalState>((set) => (
     chatId: undefined,
     openModal: (chatId?: number) => set({ isOpen: true, chatId }),
     closeModal: () => set({ isOpen: false, chatId: undefined }),
+}));
+
+interface UserEditModalState {
+    isOpen: boolean;
+    data?: User;
+    openModal: (data?: User) => void;
+    closeModal: () => void;
+}
+
+export const useUserEditModalStore = create<UserEditModalState>((set) => ({
+    isOpen: false,
+    data: undefined,
+    openModal: (data?: User) => set({ isOpen: true, data }),
+    closeModal: () => set({ isOpen: false, data: undefined }),
 }));

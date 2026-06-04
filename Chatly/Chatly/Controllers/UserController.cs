@@ -8,10 +8,7 @@ using Chatly.Services;
 using Humanizer;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
-using Chatly.Data;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using System.Data;
+
 
 namespace Chatly.Controllers
 {
@@ -55,6 +52,14 @@ namespace Chatly.Controllers
             return Ok(result);
         }
 
+        [HttpGet("list")]
+        [Authorize]
+        public async Task<IActionResult> GetUsers([FromQuery] string? query)
+        {
+            var users = await _userService.GetUsers(query);
+            return Ok(users);
+        }
+
         [HttpGet("search")]
         public async Task<IActionResult> SearchUsers(string query)
         {
@@ -69,11 +74,23 @@ namespace Chatly.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteUser(string id)
+        [HttpPut("{id}/status")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> ChangeStatus(string id, [FromBody] string status)
         {
-            await _userService.DeleteUser(id);
+            Console.WriteLine($"Changing status for user {id} to {status}");
+            Status parsed = Enum.Parse<Status>(status);
+            await _userService.ChangeStatus(id, parsed);
             return NoContent();
+        }
+
+
+        [HttpPut("{id}/email")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> ChangeEmail(string id, [FromBody] string email)
+        {
+            await _userService.ChangeEmail(id, email);
+            return Ok();
         }
     }
 }

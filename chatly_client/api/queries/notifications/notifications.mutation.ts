@@ -5,7 +5,7 @@ import { notificationsKeys } from "./notifications.keys";
 
 export function useMarkNotificationAsRead() {
     return useMutation({
-        mutationFn: (id: string) =>
+        mutationFn: (id: number) =>
             notificationService.markAsRead(id),
         onSuccess: () => {
             queryClient.invalidateQueries({

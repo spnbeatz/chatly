@@ -33,7 +33,7 @@ export const Navigation = () => {
     }
 
     return (
-        <Card className="w-full bg-white rounded-md flex flex-col items-start justify-start shrink-0 px-8">
+        <Card className="w-full bg-white rounded-md flex flex-col items-start justify-start shrink-0 px-8 py-2">
             <Card.Content className="w-full flex flex-row items-center justify-between">
                 <div className="flex flex-row items-center justify-center gap-4">
                     {routes.map((route: Route) => {
