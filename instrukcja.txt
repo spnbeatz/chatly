@@ -5,3 +5,8 @@
 5. Otworzyć w programie VSC folder chatly_client
 6. W terminalu z lokalizacją folderu chatly_client uruchomić komendę "npm install"
 7. W tym samym terminalu uruchomić projekt komendą "npm run dev"
+8. Otworzyć stronę pod adresem localhost:3000
+
+Domyślny admin:
+email: admin@chatly.com
+haslo: Admin123!
