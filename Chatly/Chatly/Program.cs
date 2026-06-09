@@ -124,12 +124,6 @@ else
 
 
 app.UseHttpsRedirection();
-app.UseStaticFiles(new StaticFileOptions
-{
-    FileProvider = new PhysicalFileProvider(
-        Path.Combine(Directory.GetCurrentDirectory(), "Uploads")),
-    RequestPath = "/files"
-});
 
 app.UseRouting();
 
