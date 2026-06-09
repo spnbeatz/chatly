@@ -44,6 +44,8 @@ namespace Chatly.Controllers
         [Authorize]
         public async Task<IActionResult> GetUser()
         {
+            Console.WriteLine($"Authenticated: {User.Identity?.IsAuthenticated}");
+            Console.WriteLine($"UserId: {GetUserId()}");
             var result = await _userService.GetCurrentUser(GetUserId());
 
             if (result == null)

@@ -125,6 +125,8 @@ else
 
 app.UseHttpsRedirection();
 
+app.UseStaticFiles();
+
 app.UseRouting();
 
 app.UseCors("frontend");
@@ -135,5 +137,8 @@ app.UseAuthorization();
 app.MapHub<ChatHub>("/chatHub");
 app.MapHub<NotifyHub>("/notifyHub");
 app.MapControllers();
+
+
+app.MapFallbackToFile("index.html");
 
 app.Run();

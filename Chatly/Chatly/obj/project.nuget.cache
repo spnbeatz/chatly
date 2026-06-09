@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3xhDWhisHlE=",
+  "dgSpecHash": "aE/I0kLnTqM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\Chatly.csproj",
+  "projectFilePath": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\Chatly.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\spnbe\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\spnbe\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
@@ -119,7 +119,7 @@
       "code": "NU1902",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Microsoft.IdentityModel.JsonWebTokens' 7.0.3 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52",
+      "message": "Pakiet „Microsoft.IdentityModel.JsonWebTokens” 7.0.3 ma znane umiarkowana luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-59j7-ghrg-fj52",
       "libraryId": "Microsoft.IdentityModel.JsonWebTokens",
       "targetGraphs": [
         "net8.0"
@@ -129,7 +129,7 @@
       "code": "NU1903",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Newtonsoft.Json' 11.0.2 has a known high severity vulnerability, https://github.com/advisories/GHSA-5crp-9r3c-p9vr",
+      "message": "Pakiet „Newtonsoft.Json” 11.0.2 ma znane wysoka luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-5crp-9r3c-p9vr",
       "libraryId": "Newtonsoft.Json",
       "targetGraphs": [
         "net8.0"
@@ -139,7 +139,7 @@
       "code": "NU1902",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'System.IdentityModel.Tokens.Jwt' 7.0.3 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52",
+      "message": "Pakiet „System.IdentityModel.Tokens.Jwt” 7.0.3 ma znane umiarkowana luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-59j7-ghrg-fj52",
       "libraryId": "System.IdentityModel.Tokens.Jwt",
       "targetGraphs": [
         "net8.0"

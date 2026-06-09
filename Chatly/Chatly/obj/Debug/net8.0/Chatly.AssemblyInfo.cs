@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Chatly")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ccb214cda540a5307c1535ee129f7e58a1d795fa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ab11500873324e3436593402f96fce3ebead90a2")]
 [assembly: System.Reflection.AssemblyProductAttribute("Chatly")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Chatly")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

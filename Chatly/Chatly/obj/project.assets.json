@@ -5161,11 +5161,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\Chatly.csproj",
+      "projectUniqueName": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\Chatly.csproj",
       "projectName": "Chatly",
-      "projectPath": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\Chatly.csproj",
+      "projectPath": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\Chatly.csproj",
       "packagesPath": "C:\\Users\\spnbe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\obj\\",
+      "outputPath": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5262,7 +5262,7 @@
       "code": "NU1902",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Microsoft.IdentityModel.JsonWebTokens' 7.0.3 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52",
+      "message": "Pakiet „Microsoft.IdentityModel.JsonWebTokens” 7.0.3 ma znane umiarkowana luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-59j7-ghrg-fj52",
       "libraryId": "Microsoft.IdentityModel.JsonWebTokens",
       "targetGraphs": [
         "net8.0"
@@ -5272,7 +5272,7 @@
       "code": "NU1903",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Newtonsoft.Json' 11.0.2 has a known high severity vulnerability, https://github.com/advisories/GHSA-5crp-9r3c-p9vr",
+      "message": "Pakiet „Newtonsoft.Json” 11.0.2 ma znane wysoka luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-5crp-9r3c-p9vr",
       "libraryId": "Newtonsoft.Json",
       "targetGraphs": [
         "net8.0"
@@ -5282,7 +5282,7 @@
       "code": "NU1902",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'System.IdentityModel.Tokens.Jwt' 7.0.3 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52",
+      "message": "Pakiet „System.IdentityModel.Tokens.Jwt” 7.0.3 ma znane umiarkowana luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-59j7-ghrg-fj52",
       "libraryId": "System.IdentityModel.Tokens.Jwt",
       "targetGraphs": [
         "net8.0"

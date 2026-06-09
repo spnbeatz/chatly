@@ -1,248 +1,728 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Chatly.bundle.scp.css",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Chatly.bundle.scp.css",
       "PackagePath": "staticwebassets\\Chatly.020fq2fez6.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\404.html",
+      "PackagePath": "staticwebassets\\404.html"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\__next.__PAGE__.txt",
+      "PackagePath": "staticwebassets\\__next.__PAGE__.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\__next._full.txt",
+      "PackagePath": "staticwebassets\\__next._full.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\__next._head.txt",
+      "PackagePath": "staticwebassets\\__next._head.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\__next._index.txt",
+      "PackagePath": "staticwebassets\\__next._index.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\__next._tree.txt",
+      "PackagePath": "staticwebassets\\__next._tree.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\07WPU-8lc9wHiTTXwE60h\\_buildManifest.js",
+      "PackagePath": "staticwebassets\\_next\\static\\07WPU-8lc9wHiTTXwE60h\\_buildManifest.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\07WPU-8lc9wHiTTXwE60h\\_clientMiddlewareManifest.js",
+      "PackagePath": "staticwebassets\\_next\\static\\07WPU-8lc9wHiTTXwE60h\\_clientMiddlewareManifest.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\07WPU-8lc9wHiTTXwE60h\\_ssgManifest.js",
+      "PackagePath": "staticwebassets\\_next\\static\\07WPU-8lc9wHiTTXwE60h\\_ssgManifest.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\PZIOIoh113pZYaGRmdD8B\\_buildManifest.js",
+      "PackagePath": "staticwebassets\\_next\\static\\PZIOIoh113pZYaGRmdD8B\\_buildManifest.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\PZIOIoh113pZYaGRmdD8B\\_clientMiddlewareManifest.js",
+      "PackagePath": "staticwebassets\\_next\\static\\PZIOIoh113pZYaGRmdD8B\\_clientMiddlewareManifest.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\PZIOIoh113pZYaGRmdD8B\\_ssgManifest.js",
+      "PackagePath": "staticwebassets\\_next\\static\\PZIOIoh113pZYaGRmdD8B\\_ssgManifest.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\QrIz3_hEyDunLISbgMZxj\\_buildManifest.js",
+      "PackagePath": "staticwebassets\\_next\\static\\QrIz3_hEyDunLISbgMZxj\\_buildManifest.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\QrIz3_hEyDunLISbgMZxj\\_clientMiddlewareManifest.js",
+      "PackagePath": "staticwebassets\\_next\\static\\QrIz3_hEyDunLISbgMZxj\\_clientMiddlewareManifest.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\QrIz3_hEyDunLISbgMZxj\\_ssgManifest.js",
+      "PackagePath": "staticwebassets\\_next\\static\\QrIz3_hEyDunLISbgMZxj\\_ssgManifest.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\SJ4Lo3iRScQozQVoEk8Qy\\_buildManifest.js",
+      "PackagePath": "staticwebassets\\_next\\static\\SJ4Lo3iRScQozQVoEk8Qy\\_buildManifest.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\SJ4Lo3iRScQozQVoEk8Qy\\_clientMiddlewareManifest.js",
+      "PackagePath": "staticwebassets\\_next\\static\\SJ4Lo3iRScQozQVoEk8Qy\\_clientMiddlewareManifest.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\SJ4Lo3iRScQozQVoEk8Qy\\_ssgManifest.js",
+      "PackagePath": "staticwebassets\\_next\\static\\SJ4Lo3iRScQozQVoEk8Qy\\_ssgManifest.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\0.oc00_v0-m~u.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\0.oc00_v0-m~u.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\01eh55v7qgnfz.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\01eh55v7qgnfz.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\02ttb~qb.ak4r.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\02ttb~qb.ak4r.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\03~yq9q893hmn.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\03~yq9q893hmn.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\0411qg2haxv55.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\0411qg2haxv55.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\05oh40~190qik.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\05oh40~190qik.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\066jf0nk75nic.css",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\066jf0nk75nic.css"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\09rf~fx3nbjm2.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\09rf~fx3nbjm2.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\0cfak78vaf_ss.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\0cfak78vaf_ss.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\0demnyoj8nper.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\0demnyoj8nper.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\0fext1w~20-z_.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\0fext1w~20-z_.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\0hi7r-ds4pt01.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\0hi7r-ds4pt01.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\0ht900cau6_ur.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\0ht900cau6_ur.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\0i8pb7a~7b0xp.css",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\0i8pb7a~7b0xp.css"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\0k8fcq_tsf70-.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\0k8fcq_tsf70-.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\0kv40ph7zh-4t.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\0kv40ph7zh-4t.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\0m.lje720y0_7.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\0m.lje720y0_7.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\0m2ha3187_wba.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\0m2ha3187_wba.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\0mob-z_ela-f_.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\0mob-z_ela-f_.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\0oe198rl887un.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\0oe198rl887un.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\0p7s21x70w3q6.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\0p7s21x70w3q6.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\0p9c42qn6pdo~.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\0p9c42qn6pdo~.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\0ppdy_73rmo66.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\0ppdy_73rmo66.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\0qu6j27fzm6e6.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\0qu6j27fzm6e6.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\0tzv4~9ykplof.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\0tzv4~9ykplof.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\0vh7~wxyilesu.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\0vh7~wxyilesu.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\0w~_tye_vxn.u.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\0w~_tye_vxn.u.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\0~zfz6g6ufo60.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\0~zfz6g6ufo60.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\14ammc1k7l~tm.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\14ammc1k7l~tm.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\15xj7.30ypbeo.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\15xj7.30ypbeo.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\172ox1xlc__uf.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\172ox1xlc__uf.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\173os.z_.v3~1.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\173os.z_.v3~1.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\chunks\\turbopack-0.na76nee4ex~.js",
+      "PackagePath": "staticwebassets\\_next\\static\\chunks\\turbopack-0.na76nee4ex~.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\media\\4fa387ec64143e14-s.0wkzw~je483f-.woff2",
+      "PackagePath": "staticwebassets\\_next\\static\\media\\4fa387ec64143e14-s.0wkzw~je483f-.woff2"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\media\\53b9e256198e5412-s.0-wfv7uh4i7h9.woff2",
+      "PackagePath": "staticwebassets\\_next\\static\\media\\53b9e256198e5412-s.0-wfv7uh4i7h9.woff2"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\media\\5ce348bf30bf5439-s.0zgw-jeven.3w.woff2",
+      "PackagePath": "staticwebassets\\_next\\static\\media\\5ce348bf30bf5439-s.0zgw-jeven.3w.woff2"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\media\\6306c77e7c8268e4-s.0rhz0arwfsn~5.woff2",
+      "PackagePath": "staticwebassets\\_next\\static\\media\\6306c77e7c8268e4-s.0rhz0arwfsn~5.woff2"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\media\\7178b3e590c64307-s.0nx0ww8fni_q3.woff2",
+      "PackagePath": "staticwebassets\\_next\\static\\media\\7178b3e590c64307-s.0nx0ww8fni_q3.woff2"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\media\\797e433ab948586e-s.p.08e28id.o-okb.woff2",
+      "PackagePath": "staticwebassets\\_next\\static\\media\\797e433ab948586e-s.p.08e28id.o-okb.woff2"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\media\\7d817b4c03b0c5f1-s.0l76wvqk9d84w.woff2",
+      "PackagePath": "staticwebassets\\_next\\static\\media\\7d817b4c03b0c5f1-s.0l76wvqk9d84w.woff2"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\media\\8a480f0b521d4e75-s.0jzbimsg8vl84.woff2",
+      "PackagePath": "staticwebassets\\_next\\static\\media\\8a480f0b521d4e75-s.0jzbimsg8vl84.woff2"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\media\\bbc41e54d2fcbd21-s.0k4k9394f2q-k.woff2",
+      "PackagePath": "staticwebassets\\_next\\static\\media\\bbc41e54d2fcbd21-s.0k4k9394f2q-k.woff2"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\media\\caa3a2e1cccd8315-s.p.09~u27dqhyhd6.woff2",
+      "PackagePath": "staticwebassets\\_next\\static\\media\\caa3a2e1cccd8315-s.p.09~u27dqhyhd6.woff2"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\media\\favicon.0x3dzn~oxb6tn.ico",
+      "PackagePath": "staticwebassets\\_next\\static\\media\\favicon.0x3dzn~oxb6tn.ico"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\media\\fef07dbb0973bf53-s.12tyk43_3sh9u.woff2",
+      "PackagePath": "staticwebassets\\_next\\static\\media\\fef07dbb0973bf53-s.12tyk43_3sh9u.woff2"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\stbRNU_UgX3Udbu7AudGH\\_buildManifest.js",
+      "PackagePath": "staticwebassets\\_next\\static\\stbRNU_UgX3Udbu7AudGH\\_buildManifest.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\stbRNU_UgX3Udbu7AudGH\\_clientMiddlewareManifest.js",
+      "PackagePath": "staticwebassets\\_next\\static\\stbRNU_UgX3Udbu7AudGH\\_clientMiddlewareManifest.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_next\\static\\stbRNU_UgX3Udbu7AudGH\\_ssgManifest.js",
+      "PackagePath": "staticwebassets\\_next\\static\\stbRNU_UgX3Udbu7AudGH\\_ssgManifest.js"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_not-found.html",
+      "PackagePath": "staticwebassets\\_not-found.html"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_not-found.txt",
+      "PackagePath": "staticwebassets\\_not-found.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_not-found\\__next._full.txt",
+      "PackagePath": "staticwebassets\\_not-found\\__next._full.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_not-found\\__next._head.txt",
+      "PackagePath": "staticwebassets\\_not-found\\__next._head.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_not-found\\__next._index.txt",
+      "PackagePath": "staticwebassets\\_not-found\\__next._index.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_not-found\\__next._not-found.txt",
+      "PackagePath": "staticwebassets\\_not-found\\__next._not-found.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_not-found\\__next._not-found\\__PAGE__.txt",
+      "PackagePath": "staticwebassets\\_not-found\\__next._not-found\\__PAGE__.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\_not-found\\__next._tree.txt",
+      "PackagePath": "staticwebassets\\_not-found\\__next._tree.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\admin.html",
+      "PackagePath": "staticwebassets\\admin.html"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\admin.txt",
+      "PackagePath": "staticwebassets\\admin.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\admin\\__next._full.txt",
+      "PackagePath": "staticwebassets\\admin\\__next._full.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\admin\\__next._head.txt",
+      "PackagePath": "staticwebassets\\admin\\__next._head.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\admin\\__next._index.txt",
+      "PackagePath": "staticwebassets\\admin\\__next._index.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\admin\\__next._tree.txt",
+      "PackagePath": "staticwebassets\\admin\\__next._tree.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\admin\\__next.admin.txt",
+      "PackagePath": "staticwebassets\\admin\\__next.admin.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\admin\\__next.admin\\__PAGE__.txt",
+      "PackagePath": "staticwebassets\\admin\\__next.admin\\__PAGE__.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\auth\\login.html",
+      "PackagePath": "staticwebassets\\auth\\login.html"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\auth\\login.txt",
+      "PackagePath": "staticwebassets\\auth\\login.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\auth\\login\\__next._full.txt",
+      "PackagePath": "staticwebassets\\auth\\login\\__next._full.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\auth\\login\\__next._head.txt",
+      "PackagePath": "staticwebassets\\auth\\login\\__next._head.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\auth\\login\\__next._index.txt",
+      "PackagePath": "staticwebassets\\auth\\login\\__next._index.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\auth\\login\\__next._tree.txt",
+      "PackagePath": "staticwebassets\\auth\\login\\__next._tree.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\auth\\login\\__next.auth.txt",
+      "PackagePath": "staticwebassets\\auth\\login\\__next.auth.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\auth\\login\\__next.auth\\login.txt",
+      "PackagePath": "staticwebassets\\auth\\login\\__next.auth\\login.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\auth\\login\\__next.auth\\login\\__PAGE__.txt",
+      "PackagePath": "staticwebassets\\auth\\login\\__next.auth\\login\\__PAGE__.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\auth\\register.html",
+      "PackagePath": "staticwebassets\\auth\\register.html"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\auth\\register.txt",
+      "PackagePath": "staticwebassets\\auth\\register.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\auth\\register\\__next._full.txt",
+      "PackagePath": "staticwebassets\\auth\\register\\__next._full.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\auth\\register\\__next._head.txt",
+      "PackagePath": "staticwebassets\\auth\\register\\__next._head.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\auth\\register\\__next._index.txt",
+      "PackagePath": "staticwebassets\\auth\\register\\__next._index.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\auth\\register\\__next._tree.txt",
+      "PackagePath": "staticwebassets\\auth\\register\\__next._tree.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\auth\\register\\__next.auth.txt",
+      "PackagePath": "staticwebassets\\auth\\register\\__next.auth.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\auth\\register\\__next.auth\\register.txt",
+      "PackagePath": "staticwebassets\\auth\\register\\__next.auth\\register.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\auth\\register\\__next.auth\\register\\__PAGE__.txt",
+      "PackagePath": "staticwebassets\\auth\\register\\__next.auth\\register\\__PAGE__.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\emoticons\\angry.png",
+      "PackagePath": "staticwebassets\\emoticons\\angry.png"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\emoticons\\laugh.png",
+      "PackagePath": "staticwebassets\\emoticons\\laugh.png"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\emoticons\\love.png",
+      "PackagePath": "staticwebassets\\emoticons\\love.png"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\emoticons\\sad.png",
+      "PackagePath": "staticwebassets\\emoticons\\sad.png"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\emoticons\\smile.png",
+      "PackagePath": "staticwebassets\\emoticons\\smile.png"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\file.svg",
+      "PackagePath": "staticwebassets\\file.svg"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\globe.svg",
+      "PackagePath": "staticwebassets\\globe.svg"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\index.txt",
+      "PackagePath": "staticwebassets\\index.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\studia\\STUDY\\S.5\\Zaawansowane programowanie\\Chatlyy\\Chatly\\Chatly\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\next.svg",
+      "PackagePath": "staticwebassets\\next.svg"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\noaccess.html",
+      "PackagePath": "staticwebassets\\noaccess.html"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\noaccess.txt",
+      "PackagePath": "staticwebassets\\noaccess.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\noaccess\\__next._full.txt",
+      "PackagePath": "staticwebassets\\noaccess\\__next._full.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\noaccess\\__next._head.txt",
+      "PackagePath": "staticwebassets\\noaccess\\__next._head.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\noaccess\\__next._index.txt",
+      "PackagePath": "staticwebassets\\noaccess\\__next._index.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\noaccess\\__next._tree.txt",
+      "PackagePath": "staticwebassets\\noaccess\\__next._tree.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\noaccess\\__next.noaccess.txt",
+      "PackagePath": "staticwebassets\\noaccess\\__next.noaccess.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\noaccess\\__next.noaccess\\__PAGE__.txt",
+      "PackagePath": "staticwebassets\\noaccess\\__next.noaccess\\__PAGE__.txt"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\vercel.svg",
+      "PackagePath": "staticwebassets\\vercel.svg"
+    },
+    {
+      "Id": "C:\\Users\\spnbe\\OneDrive\\Pulpit\\Nowy folder\\chatly\\Chatly\\Chatly\\wwwroot\\window.svg",
+      "PackagePath": "staticwebassets\\window.svg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Chatly.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
