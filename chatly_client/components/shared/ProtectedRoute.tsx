@@ -12,7 +12,7 @@ export const ProtectedRoute = ({ children, role }: { children: React.ReactNode, 
 
     useEffect(() => {
         console.log(user, "user logged");
-        if (user === null) {
+        if (user === null || user === undefined) {
             router.push("/auth/login");
         }
         if(role && user?.role !== role) {
