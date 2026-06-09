@@ -11,7 +11,6 @@ export const ProtectedRoute = ({ children, role }: { children: React.ReactNode, 
     const { data: user, isLoading } = useCurrentUser();
 
     useEffect(() => {
-        if (isLoading) return;
         console.log(user, "user logged");
         if (user === null) {
             router.push("/auth/login");
